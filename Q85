@@ -1,0 +1,45 @@
+//
+#include <iostream>
+using namespace std;
+
+class Library {
+private:
+    int totalBooks;
+
+protected:
+    int issuedBooks;
+
+public:
+    string libraryName;
+
+    Library() {
+        totalBooks = 1000;
+        issuedBooks = 100;
+        libraryName = "Central Library";
+    }
+
+    void displayInfo() {
+        cout << "Library Name: " << libraryName << endl;
+        cout << "Total Books (Private): " << totalBooks << endl;
+        cout << "Issued Books (Protected): " << issuedBooks << endl;
+    }
+};
+
+class Student : public Library {
+public:
+    void showIssuedBooks() {
+        cout << "Accessing protected member from derived class: " << issuedBooks << endl;
+    }
+};
+
+int main() {
+    Library lib;
+    lib.displayInfo();
+    cout << "Accessing public member: " << lib.libraryName << endl;
+
+    Student s;
+    s.showIssuedBooks();
+
+
+    return 0;
+}

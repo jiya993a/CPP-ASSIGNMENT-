@@ -1,0 +1,36 @@
+//
+
+# Reuse Person class from earlier
+class Person:
+    def __init__(self):
+        self.__name = ""
+        self.__age = 0
+
+    # Setters
+    def set_name(self, name):
+        self.__name = name
+
+    def set_age(self, age):
+        self.__age = age
+
+    # Getters
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+
+# Student class inherits from Person
+class Student(Person):
+    def __init__(self):
+        super().__init__()
+        self.__studentID = ""
+
+    # Setter
+    def set_studentID(self, studentID):
+        self.__studentID = studentID
+
+    # Getter
+    def get_studentID(self):
+        return self.__studentID
